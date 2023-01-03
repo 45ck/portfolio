@@ -285,8 +285,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={`w-1/2 max-lg:w-full z-0 max-lg:flex lg:flex-col flex-row justify-center max-lg:mt-4 max-lg:flex-row-reverse max-lg:pb-16`}>
-                  <Image onClick={() => setStaffPassModalActive(value => value = !value)} src={require("../public/1.PNG")} className={`cursor-pointer brightness-90 hover:brightness-105 hover:scale-105 transition-all relative skew-y-3 top-1/2 -translate-y-1/2 lg:scale-90 lg:hover:scale-95 rounded-lg shadow-2xl shadow-black lg:m-7 max-lg:mx-4 md:mt-0 lg:w-full max-w-none max-lg:w-1/2 max-lg:translate-y-5 max-lg:-translate-x-8 `} />
-                  <Image onClick={() => setStaffPassModalActive(value => value = !value)} src={require("../public/3.PNG")} className={`top-1/4 relative rounded-lg -skew-y-2 lg:-translate-y-1/2 max-lg:translate-y-1/4 scale-80 lg:scale-[0.6] lg:hover:scale-[0.65] cursor-pointer brightness-90 hover:brightness-105 hover:scale-[0.85] transition-all -translate-x-14 max-lg:translate-x-10 shadow-2xl shadow-black lg:m-7 md:mt-0 max-lg:mx-4 lg:w-full w-28 max-lg:w-1/2 max-lg:h-auto`} />
+                  <Image onClick={() => setStaffPassModalActive(value => value = !value)} src={require("../public/1.png")} className={`cursor-pointer brightness-90 hover:brightness-105 hover:scale-105 transition-all relative skew-y-3 top-1/2 -translate-y-1/2 lg:scale-90 lg:hover:scale-95 rounded-lg shadow-2xl shadow-black lg:m-7 max-lg:mx-4 md:mt-0 lg:w-full max-w-none max-lg:w-1/2 max-lg:translate-y-5 max-lg:-translate-x-8 `} />
+                  <Image onClick={() => setStaffPassModalActive(value => value = !value)} src={require("../public/3.png")} className={`top-1/4 relative rounded-lg -skew-y-2 lg:-translate-y-1/2 max-lg:translate-y-1/4 scale-80 lg:scale-[0.6] lg:hover:scale-[0.65] cursor-pointer brightness-90 hover:brightness-105 hover:scale-[0.85] transition-all -translate-x-14 max-lg:translate-x-10 shadow-2xl shadow-black lg:m-7 md:mt-0 max-lg:mx-4 lg:w-full w-28 max-lg:w-1/2 max-lg:h-auto`} />
                 </div>
               </div>
             </div>
@@ -314,12 +314,12 @@ export default function Home() {
           active={staffPassModalActive}
           setActive={setStaffPassModalActive}
           images={[
-            require("../public/1.PNG"),
-            require("../public/2.PNG"),
-            require("../public/3.PNG"),
-            require("../public/4.PNG"),
-            require("../public/5.PNG"),
-            require("../public/6.PNG"),
+            require("../public/1.png"),
+            require("../public/2.png"),
+            require("../public/3.png"),
+            require("../public/4.png"),
+            require("../public/5.png"),
+            require("../public/6.png"),
           ]} />
 
       </main>
@@ -342,9 +342,9 @@ const SlideShow = (props) => {
       <Image src={props.image} />
       <p className=' text-stone-300 text-5xl text-center p-1 bg-zinc-900 font-titillium'>
         {props.year}
-        <div className={`inline-block m-0 ml-1`}>{props.stack != null && props.stack.map((tech, index) => {
+        <span className={`inline-block m-0 ml-1`}>{props.stack != null && props.stack.map((tech, index) => {
           return <Image className='inline-block' src={tech} key={index} width={"auto"} height={45} />
-        })}</div>
+        })}</span>
       </p>
     </div>
   );
