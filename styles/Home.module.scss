@@ -1,0 +1,69 @@
+
+
+.container {
+  position: absolute;
+  left: 0;
+  width: 6000px;
+  height: 50%;
+  transform: translateY(262px);
+  animation: infiniteScroll 55s linear infinite running;
+  z-index: 5
+}
+
+.container {
+  @media screen and (min-width: 1000px) {
+    top: 50%;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 1000px) {
+    transform: translateY(50%);
+    top: 50%;
+  }
+}
+
+@mixin imageSelector {
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      transform: translateX(#{($i - 1) * 100%});
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 500px;
+  padding-left: 35px;
+  height: auto;
+  background-color: theme('colors.zinc.900');
+  @include imageSelector;
+}
+
+.image > img {
+  border-radius: 8px;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateY(-50%) translateX(0%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+@screen lg {
+  .image {
+    width: 1000px;
+    padding-left: 75px;
+  }
+
+  .container {
+    width: 12000px;
+  }
+}
+
+.projectImage {
+  top: 15%;
+}
