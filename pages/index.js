@@ -101,7 +101,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Calvin's Portfolio</title>
+        <title>Calvin&apos;s Portfolio</title>
       </Head>
       <main>
         <section className=" h-screen bg-zinc-800 ">
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
           <div className='flex flex-row ' ref={aboutMeSection}>
             <div className="lg:p-7 lg:basis-1/3 m-10 flex items-start text-left flex-col justify-center w-screen h-screen">
-              <HeadingMain > A developer's journey through code. </HeadingMain>
+              <HeadingMain > A developer&apos;s journey through code. </HeadingMain>
               <HeadingSub className="mt-8 text-sky-300/95 hello w-full"> Calvin Kennedy </HeadingSub>
             </div>
             <div className={`overflow-hidden w-screen h-screen absolute`}>
@@ -195,7 +195,7 @@ export default function Home() {
                     <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
                       I am pleased to showcase two complex websites that I have created using Next.js, Bootstrap or Tailwind, and React. These websites, which are featured on my portfolio, demonstrate my skills and proficiency in creating visually appealing and functional web applications that deliver a seamless user experience on both mobile and desktop devices.
                       <br /><br />
-                      I have implemented interactive and dynamic features using React, a powerful JavaScript library for building user interfaces, within the Next.js framework. My websites also interact with API's and feature interactive elements, showcasing my ability to implement dynamic and interactive features using these technologies. I have utilized SCSS and PostCSS to write efficient and maintainable styles for my websites.
+                      I have implemented interactive and dynamic features using React, a powerful JavaScript library for building user interfaces, within the Next.js framework. My websites also interact with API&apos;s and feature interactive elements, showcasing my ability to implement dynamic and interactive features using these technologies. I have utilized SCSS and PostCSS to write efficient and maintainable styles for my websites.
                       <br /><br />
                       I have a strong understanding of Next.js, Bootstrap, Tailwind, and React, and have used these tools and frameworks effectively to create websites that are visually appealing, functional, and optimized for user experience. My attention to detail and dedication to creating high-quality websites is evident in the work that is featured on my portfolio.
                       <br /><br />
@@ -262,9 +262,9 @@ export default function Home() {
                     <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
                       I have had the opportunity to create a number of web applications for Macquarie College, including a staff and student management platform and an onboarding system.
                       <br /><br />
-                      The first application, called "staffpass," was developed using PHP, Javascript, HTML, CSS, Bootstrap, and jQuery. This web app provided a way for staff members, such as teachers, to manage their students' accounts at the school. It allowed for resetting passwords, sending login credentials to students, teachers, and parents, and searching through student databases to find and perform actions on student records. The app also included a permission system that allowed for managing which staff members could view and take actions on student and staff records. This application saved a significant amount of time for Macquarie College, as teachers no longer had to contact IT every time a student forgot their password.
+                      The first application, called &quot;staffpass,&quot; was developed using PHP, Javascript, HTML, CSS, Bootstrap, and jQuery. This web app provided a way for staff members, such as teachers, to manage their students&apos; accounts at the school. It allowed for resetting passwords, sending login credentials to students, teachers, and parents, and searching through student databases to find and perform actions on student records. The app also included a permission system that allowed for managing which staff members could view and take actions on student and staff records. This application saved a significant amount of time for Macquarie College, as teachers no longer had to contact IT every time a student forgot their password.
                       <br /><br />
-                      The second application, which was almost completed, was an onboarding system for new staff members. This app connected to a tool called ManageEngine and used REST APIs to communicate with it and other services. It allowed for onboarding new staff members by filling out a form, and it would then perform the appropriate actions to onboard them into the school's systems. It would also notify IT of the new staff member and generate and add their details into the system. This app was developed using PHP, Javascript, and Bootstrap.
+                      The second application, which was almost completed, was an onboarding system for new staff members. This app connected to a tool called ManageEngine and used REST APIs to communicate with it and other services. It allowed for onboarding new staff members by filling out a form, and it would then perform the appropriate actions to onboard them into the school&apos;s systems. It would also notify IT of the new staff member and generate and add their details into the system. This app was developed using PHP, Javascript, and Bootstrap.
                       <br /><br />
                       I am proud of the work that I have done for Macquarie College and the value that these applications have brought to the school. A modified version of the code for these applications is available upon request.
                     </p>
