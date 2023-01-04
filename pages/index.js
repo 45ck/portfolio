@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Video from '../components/Video'
-import Carousel from '../components/Carousel'
+import StaffPassModal from '../components/StaffPassModal'
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 
 export default function Home() {
@@ -49,7 +49,8 @@ export default function Home() {
             start: "top top",
             end: "bottom top",
             toggleActions: "play pause resume reset",
-            onLeaveBack: () => { projectElement.style.opacity = 0, projectElement.style.position = "relative" },
+            // opacity is set to 0 to make sure there is no initial flickering
+            onLeaveBack: () => { projectElement.style.opacity = 0, projectElement.style.position = "relative" },  
             onEnter: () => { projectElement.style.left = "100%", projectElement.style.opacity = 1, projectElement.style.position = "fixed" },
             snap: 0.5
           },
@@ -61,28 +62,35 @@ export default function Home() {
       });
     }, Home);
 
+    return () => ctx.revert();
+
+  }, []);
+
+  // navigation
+
+  // keep the initial dimensions (width/height) of each sections
+  const sectionCache = useRef([]);
+
+  useEffect(() => {
 
     sectionCache.current.push({ name: "jsWebsiteSection", element: jsWebsiteSection.current });
     sectionCache.current.push({ name: "oldProjectsSection", element: oldProjectsSection.current });
     sectionCache.current.push({ name: "videoGameSection", element: videoGameSection.current });
     sectionCache.current.push({ name: "webAppsSection", element: webAppsSection.current });
 
-    return () => ctx.revert();
-
-
   }, []);
 
-  const sectionCache = useRef([]);
-
+  // when you press a option in nav menu
   const navigationGoTo = (key) => {
+
+    // find the section we want to go to
     var section = sectionCache.current.find((value) => value.name === key)
 
-    console.log(section)
-
+    // find how much we need to scroll down or up to.
     let amountScroll = window.scrollY + section.element.getBoundingClientRect().bottom;
 
-    console.log(section.element.getBoundingClientRect().bottom, window.scrollY + " < " + amountScroll + " = " + (window.scrollY < amountScroll))
-
+    // if user is above the element than go scroll down using the amountScroll amount
+    // if user is bellow the element than just go directly to the element.
     if (window.scrollY < amountScroll)
       gsap.to(window,
         {
@@ -97,7 +105,6 @@ export default function Home() {
         });
   }
 
-
   return (
     <>
       <Head>
@@ -105,7 +112,7 @@ export default function Home() {
       </Head>
       <main>
         <section className=" h-screen bg-zinc-800 ">
-          <div className={`max-md:left-full max-md:-translate-x-full hover:scale-110 fixed z-[100] mt-2 ml-2 cursor-pointer group transition-transform w-32`}>
+          <div className={`max-md:left-full max-md:-translate-x-full hover:scale-110 fixed z-[80] mt-2 ml-2 cursor-pointer group transition-transform w-32`}>
             <svg viewBox="0 0 495 495" enableBackground="new 0 0 495 495" width={95} height={95} className="fill-zinc-200 group-hover:animate-spin group-hover:w-full transition-all">
               <g>
                 <path d="M422.509,72.491C375.762,25.745,313.609,0,247.5,0S119.238,25.745,72.491,72.491C25.745,119.238,0,181.391,0,247.5   s25.745,128.262,72.491,175.009C119.238,469.255,181.39,495,247.5,495s128.262-25.745,175.009-72.491   C469.255,375.762,495,313.61,495,247.5S469.255,119.238,422.509,72.491z M411.902,411.902C367.989,455.816,309.603,480,247.5,480   s-120.489-24.184-164.402-68.098C39.184,367.989,15,309.603,15,247.5S39.184,127.011,83.098,83.098   C127.011,39.184,185.397,15,247.5,15s120.489,24.184,164.402,68.098C455.816,127.011,480,185.397,480,247.5   S455.816,367.989,411.902,411.902z" />
@@ -115,7 +122,7 @@ export default function Home() {
               </g>
             </svg>
             <div className={`bg-zinc-800 absolute h-fit top-24 z-[100] shadow-md group-hover:opacity-100 opacity-0 transition-all font-nunito text-zinc-100
-                text-center group-hover:mt-3 w-full border-zinc-600 border border-solid rounded-sm text-sm sm:text-base border-l-0`}>
+                text-center group-hover:mt-3 w-full border-zinc-600 border border-solid rounded-sm text-sm sm:text-base border-l-0 pointer-events-none group-hover:pointer-events-auto`}>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
               lg:px-5 lg:py-3 px-2 py-2  w-full `} onClick={() => { gsap.to(window, { duration: 2, scrollTo: aboutMeSection.current }) }}> About Me </button>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
@@ -187,7 +194,7 @@ export default function Home() {
               <div className={`2xl:py-10 2xl:px-32 xl:py-8 xl:px-24  sm:py-3 sm:px-8 px-1 py-1 flex flex-col lg:flex-row`}>
                 <div className={`w-1/2 max-lg:w-full z-0 order-last lg:order-first  max-lg:flex lg:flex-col flex-row justify-center max-lg:mt-4 max-lg:flex-row-reverse max-lg:pb-16`}>
                   <Image src={require("../public/great-plains.webp")} className={`${styles.projectImage} relative skew-y-2  translate-x-32 max-lg:-translate-x-16 lg:scale-90 lg:hover:scale-95 hover:scale-105 transition-all cursor-pointer brightness-90 hover:brightness-105 rounded-lg shadow-2xl shadow-black lg:m-7 max-lg:mx-4 md:mt-0 lg:w-full max-w-none max-lg:w-1/2 `} />
-                  <Image src={require("../public/coding-tutor.webp")} className={`${styles.projectImage} relative rounded-lg -skew-y-2 lg:-translate-y-3/4 max-lg:translate-y-1/4 scale-90 lg:scale-75 lg:hover:scale-80 cursor-pointer brightness-90 hover:brightness-105 hover:scale-105 transition-all  -translate-x-26 max-lg:translate-x-10 shadow-2xl shadow-black lg:m-7 md:mt-0 max-lg:mx-4 lg:w-full w-28 max-lg:w-1/2 max-lg:h-auto`} />
+                  <Image onClick={() => window.open("https://www.newcastlecodingtutors.com/home")} src={require("../public/coding-tutor.webp")} className={`${styles.projectImage} relative rounded-lg -skew-y-2 lg:-translate-y-3/4 max-lg:translate-y-1/4 scale-90 lg:scale-75 lg:hover:scale-80 cursor-pointer brightness-90 hover:brightness-105 hover:scale-105 transition-all  -translate-x-26 max-lg:translate-x-10 shadow-2xl shadow-black lg:m-7 md:mt-0 max-lg:mx-4 lg:w-full w-28 max-lg:w-1/2 max-lg:h-auto`} />
                 </div>
                 <div className={`lg:w-1/2 z-10 order-first lg:order-last`}>
                   <div className={`flex flex-col h-full justify-center`}>
@@ -310,7 +317,7 @@ export default function Home() {
 
         </div>
 
-        <Carousel
+        <StaffPassModal
           active={staffPassModalActive}
           setActive={setStaffPassModalActive}
           images={[
