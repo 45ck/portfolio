@@ -61,7 +61,7 @@ const StaffPassModal = (props) => {
                 <div>
                     {props.images.map((image, keyIndex) => {
                         return <div key={keyIndex} className={` absolute top-1/2 left-1/2 -translate-x-1/2 max-sm:-translate-y-1/4 sm:-translate-y-1/2 max-lg:w-full z-0  transition-all ${index == keyIndex ? "opacity-100" : "opacity-0"}`}>
-                            <Image src={image} />
+                            <Image loading='lazy' src={image} />
                         </div>
                     })}
                 </div>
