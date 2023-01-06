@@ -14,7 +14,7 @@ export default function Home() {
   const projectsText = useRef();
   const aboutMeSection = useRef();
   const jsWebsiteSection = useRef();
-  const oldProjectsSection = useRef();
+  const smallProjectsSection = useRef();
   const videoGameSection = useRef();
   const webAppsSection = useRef();
   const contactSection = useRef();
@@ -74,7 +74,7 @@ export default function Home() {
   useEffect(() => {
 
     sectionCache.current.push({ name: "jsWebsiteSection", element: jsWebsiteSection.current });
-    sectionCache.current.push({ name: "oldProjectsSection", element: oldProjectsSection.current });
+    sectionCache.current.push({ name: "smallProjectsSection", element: smallProjectsSection.current });
     sectionCache.current.push({ name: "videoGameSection", element: videoGameSection.current });
     sectionCache.current.push({ name: "webAppsSection", element: webAppsSection.current });
 
@@ -122,13 +122,13 @@ export default function Home() {
               </g>
             </svg>
             <div className={`bg-zinc-800 absolute h-fit top-24 z-[100] shadow-md group-hover:opacity-100 opacity-0 transition-all font-nunito text-zinc-100
-                text-center md:group-hover:mt-3 w-full border-zinc-600 border border-solid rounded-sm text-sm sm:text-base border-l-0 pointer-events-none group-hover:pointer-events-auto`}>
+                text-center md:group-hover:mt-3 w-full border-zinc-600 border border-solid rounded-sm text-sm font-size sm:text-base border-l-0 pointer-events-none group-hover:pointer-events-auto`}>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
               lg:px-5 lg:py-3 px-2 py-2  w-full `} onClick={() => { gsap.to(window, { duration: 2, scrollTo: aboutMeSection.current }) }}> About Me </button>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
               lg:px-5 lg:py-3 px-2 py-2  w-full `} onClick={() => navigationGoTo("jsWebsiteSection")}> Javascript </button>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
-              lg:px-5 lg:py-3 px-2 py-2  w-full `} onClick={() => navigationGoTo("oldProjectsSection")}> Old Projects </button>
+              lg:px-5 lg:py-3 px-2 py-2  w-full whitespace-nowrap`} onClick={() => navigationGoTo("smallProjectsSection")}> Small Projects </button>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
               lg:px-5 lg:py-3 px-2 py-2  w-full `} onClick={() => navigationGoTo("videoGameSection")}> Video Game </button>
               <button className={` bg-zinc-800 hover:bg-zinc-700 transition-all text-sm hover:border-transparent 
@@ -199,7 +199,7 @@ export default function Home() {
                 <div className={`lg:w-1/2 z-10 order-first lg:order-last`}>
                   <div className={`flex flex-col h-full justify-center`}>
                     <h2 className="text-sky-400/95 float-left py-5 px-10 font-bold pl-0 font-titillium text-lg 2xl:text-7xl xl:text-6xl lg:text-3xl md:text-3xl sm:text-3xl whitespace-nowrap w-full lg:w-fit"> Javascript Websites </h2>
-                    <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
+                    <p className={`2xl:text-lg xl:text-base text-xs font-nunito text-zinc-300`}>
                       I am pleased to showcase two complex websites that I have created using Next.js, Bootstrap or Tailwind, and React. These websites, which are featured on my portfolio, demonstrate my skills and proficiency in creating visually appealing and functional web applications that deliver a seamless user experience on both mobile and desktop devices.
                       <br /><br />
                       I have implemented interactive and dynamic features using React, a powerful JavaScript library for building user interfaces, within the Next.js framework. My websites also interact with API&apos;s and feature interactive elements, showcasing my ability to implement dynamic and interactive features using these technologies. I have utilized SCSS and PostCSS to write efficient and maintainable styles for my websites.
@@ -214,13 +214,13 @@ export default function Home() {
             </div>
           </section>
 
-          <section className={`bg-zinc-800 max-lg:min-h-screen h-screen w-screen relative  justify-center align-center items-center flex project z-40`} ref={oldProjectsSection} >
+          <section className={`bg-zinc-800 max-lg:min-h-screen h-screen w-screen relative  justify-center align-center items-center flex project z-40`} ref={smallProjectsSection} >
             <div className={`flex lg:flex-row flex-col content-center items-center justify-self-center justify-items-center`}>
               <div className={`2xl:py-10 2xl:px-32 xl:py-8 xl:px-24  sm:py-3 sm:px-8 px-1 py-1 flex flex-col lg:flex-row`}>
                 <div className={`lg:w-1/2 z-10 `}>
                   <div className={`flex flex-col h-full justify-center`}>
                     <h2 className="text-sky-400/95 float-left py-5 px-10 font-titillium font-bold pl-0  text-lg 2xl:text-7xl xl:text-6xl lg:text-3xl md:text-3xl sm:text-3xl whitespace-nowrap w-full lg:w-fit"> Small Projects </h2>
-                    <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
+                    <p className={`2xl:text-lg xl:text-base text-xs font-nunito text-zinc-300`}>
                       In addition to my work as a software developer, I have also created a number of personal projects that demonstrate my skills and interests. One of my notable projects is an interpreter for my own simple scripting language, inspired by the Windows command line and batch scripting. This project required the ability to design and implement a custom language, as well as some knowledge of C++.
                       <br /><br />
                       I have also created a simple game using Python, in which the player shoots a balloon into the sky. This project was a fun and challenging side project that allowed me to experiment with game development and improve my Python skills.
@@ -241,13 +241,22 @@ export default function Home() {
           <section className={`bg-zinc-800 max-lg:min-h-screen h-screen w-screen relative  justify-center align-center items-center flex project z-30`} ref={videoGameSection} >
             <div className={`flex lg:flex-row flex-col content-center items-center justify-self-center justify-items-center`}>
               <div className={`2xl:py-10 2xl:px-32 xl:py-8 xl:px-24  sm:py-3 sm:px-8 px-1 py-1 flex flex-col lg:flex-row`}>
-                <div className={`lg:w-1/2 z-0 order-last lg:order-first flex lg:flex-col flex-row justify-center max-lg:mt-4 max-lg:flex-row-reverse max-lg:pb-16`}>
-                  <Video src="/videogame.mp4" />
+                <div className={`lg:w-1/2 z-0 order-last lg:order-first flex lg:flex-col flex-row justify-center max-lg:mt-4 max-lg:flex-row-reverse`}>
+                  <div className=' float-none clear-both m-1 lg:w-auto lg:h-full lg:p-10 p-2 lg:aspect-[1.25/1] rounded-lg'>
+                  <embed className='aspect-[1.25/1] '
+                      src="https://www.youtube.com/embed/AWkErmXkpks?autoplay=1&mute=1"
+                      type="video/mp4"
+                      width="100%" height="100%"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                      allowfullscreen
+                      title="Keyboard Cat"
+                  />
+                  </div>
                 </div>
                 <div className={`lg:w-1/2 z-10 order-first lg:order-last`}>
                   <div className={`flex flex-col h-full justify-center`}>
                     <h2 className="text-sky-400/95 float-left py-5 px-10 font-titillium font-bold pl-0  text-lg 2xl:text-7xl xl:text-6xl lg:text-3xl md:text-3xl sm:text-3xl whitespace-nowrap w-full lg:w-fit"> Video Game Project </h2>
-                    <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
+                    <p className={`2xl:text-lg xl:text-base text-xs font-nunito text-zinc-300`}>
                       One of my most notable projects is a FPS game that I created using Unity3D and C#. This game, which I developed approximately 4 years ago, features advanced game mechanics such as wall running, double jumping, and bullet collision detection, as well as character customization and advanced AI that can track and hunt the player.
                       <br /><br />
                       The game also includes a level progression system that allows players to unlock new items and abilities as they progress through the game. There are missions and levels that unlock as the player progresses through the game, adding to its replay value.
@@ -260,24 +269,24 @@ export default function Home() {
             </div>
           </section>
 
-          <section className={`bg-zinc-800 max-lg:min-h-screen max-lg:h-[125vh] lg:h-screen  w-screen relative  justify-center align-center items-center flex project z-20`} ref={webAppsSection} >
+          <section className={`bg-zinc-800 max-lg:min-h-screen max-lg:h-[125vh] lg:h-screen  w-screen relative justify-center align-center items-center flex project z-20`} ref={webAppsSection} >
             <div className={`flex lg:flex-row flex-col content-center items-center justify-self-center justify-items-center`}>
               <div className={`2xl:py-10 2xl:px-32 xl:py-8 xl:px-24  sm:py-3 sm:px-8 px-1 py-1 flex flex-col lg:flex-row`}>
                 <div className={`lg:w-1/2 z-10 `}>
                   <div className={`flex flex-col h-full justify-center`}>
                     <h2 className="text-sky-400/95 float-left py-5 px-10 font-titillium font-bold pl-0  text-lg 2xl:text-7xl xl:text-6xl lg:text-3xl md:text-3xl sm:text-3xl whitespace-nowrap w-full lg:w-fit"> Web Applications </h2>
-                    <p className={`2xl:text-2xl xl:text-base text-xs font-nunito text-zinc-300`}>
+                    <p className={`2xl:text-lg xl:text-base text-xs font-nunito text-zinc-300`}>
                       I have had the opportunity to create a number of web applications for Macquarie College, including a staff and student management platform and an onboarding system.
                       <br /><br />
                       The first application, called &quot;staffpass,&quot; was developed using PHP, Javascript, HTML, CSS, Bootstrap, and jQuery. This web app provided a way for staff members, such as teachers, to manage their students&apos; accounts at the school. It allowed for resetting passwords, sending login credentials to students, teachers, and parents, and searching through student databases to find and perform actions on student records. The app also included a permission system that allowed for managing which staff members could view and take actions on student and staff records. This application saved a significant amount of time for Macquarie College, as teachers no longer had to contact IT every time a student forgot their password.
                       <br /><br />
                       The second application, which was almost completed, was an onboarding system for new staff members. This app connected to a tool called ManageEngine and used REST APIs to communicate with it and other services. It allowed for onboarding new staff members by filling out a form, and it would then perform the appropriate actions to onboard them into the school&apos;s systems. It would also notify IT of the new staff member and generate and add their details into the system. This app was developed using PHP, Javascript, and Bootstrap.
                       <br /><br />
-                      I am proud of the work that I have done for Macquarie College and the value that these applications have brought to the school. A modified version of the code for these applications is available upon request.
+                      A modified version of the code for these applications is available upon request.
                     </p>
 
                     <div className="flex justify-between items-center">
-                      <p className=" text-red-600 fill-red-600 mt-10 flex items-center">
+                      <p className="text-red-600 fill-red-600 lg:mt-10 flex items-center">
                         <svg className="mr-4" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
                           <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                           <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
@@ -300,7 +309,7 @@ export default function Home() {
           </section>
 
           <section className={`h-screen w-screen relative lg:py-10 lg:px-56 flex justify-center items-center flex-col text-center`} ref={contactSection}>
-            <h2 className="text-sky-400/95 2xl:text-9xl text-5xl font-titillium  py-5 font-bold pl-0"> Contact </h2>
+            <h2 className="text-sky-400/95 2xl:text-9xl text-5xl font-titillium py-5 font-bold pl-0"> Contact </h2>
             <p className={`2xl:text-3xl text-lg  font-nunito text-zinc-700 text-center`}>
               <a className="hover:text-sky-600/90 underline transition" href="mailto:ajax@aquinus.net">ajax@aquinus.net</a> <br /><br />
               <a className="hover:text-sky-600/90 underline transition" href="tel:0432041057">0432 041 057</a>

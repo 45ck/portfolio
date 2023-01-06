@@ -11,10 +11,7 @@ const Video = (props) => {
 
     return (
         <>
-            <video autoPlay loop muted={true} controls className="p-10 rounded-lg">
-                <source src={src} type="video/mp4"   />
-                Your browser does not support the video tag.
-            </video>
+            
         </>
     )
 };
