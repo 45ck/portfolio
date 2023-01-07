@@ -168,13 +168,13 @@ export default function Home() {
               <div className={``}>
                 <h2 className="text-sky-400/95 float-left py-5 px-10 font-bold font-titillium pl-0 2xl:text-9xl xl:text-7xl lg:text-5xl md:text-3xl text-3xl whitespace-nowrap"> About Me </h2>
                 <p className={`2xl:text-2xl xl:text-lg font-nunito text-zinc-300`}>
-                  As a software developer with a passion for programming, I am currently pursuing a degree in software engineering at the University of Newcastle. With over 7 years of experience in coding, I have a diverse range of skills that includes web development, Unity 3D game development, and even creating interpreters and discord bots.
-                  <br /><br />
-                  I have 2 years of professional experience as a fullstack web developer, during which time I have developed and launched a number of web applications. I am passionate about software development and am always looking for ways to improve my skills and grow as a developer.
-                  <br /><br />
-                  In my free time, I enjoy programming and staying active through activities like going to the gym and playing sports. I also enjoy playing video games on occasion and sometimes use my programming skills to create mods.
-                  <br /><br />
-                  I am excited to continue my studies and career in software development and am eager to take on new challenges.
+                As a highly motivated software developer with a passion for programming and 7 years of experience, I am currently pursuing a degree in software engineering at the University of Newcastle. I have a diverse range of skills, including web development, Unity 3D game development, and even creating interpreters and discord bots.
+                <br/><br/>
+                I have 2 years of professional experience as a fullstack web developer, during which time I have successfully developed and launched several web applications. My passion for software development drives me to constantly seek out opportunities to improve my skills and grow as a developer.
+                <br/><br/>
+                In addition to my technical expertise, I am a strong communicator and team player, and thrive in collaborative environments. I am also a fast learner and enjoy taking on new challenges. My programming language proficiency includes C++, C#, Java, PHP, Javascript, and Python, and I have experience with frameworks such as NEXT.js and ASP.NET.
+                <br/><br/>
+                I am excited to continue my studies and career in software development, and am eager to apply my skills and experience to new challenges.
                 </p>
               </div>
             </div>
