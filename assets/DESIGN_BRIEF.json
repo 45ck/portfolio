@@ -1,0 +1,24 @@
+{
+  "repo_name": "portfolio",
+  "tagline": "Personal portfolio, crafted with Next.js",
+  "one_sentence_purpose": "A personal portfolio website built with Next.js, GSAP animations, Tailwind CSS, and Sass to showcase projects to employers and clients",
+  "target_users": "Employers, clients, and collaborators viewing a developer's work",
+  "keywords": ["portfolio", "nextjs", "animations", "showcase"],
+  "visual_metaphors": ["a browser window framing a curated gallery of project cards", "flowing geometric shapes suggesting smooth GSAP animations", "a spotlight illuminating a developer's desk with code on screen"],
+  "avoid": ["no mascots", "no photorealism", "no generic stock-photo style"],
+  "style_adjectives": ["elegant", "personal", "animated", "polished", "creative"],
+  "palette_hint": {
+    "bg_light": "#ffffff",
+    "bg_dark": "#0d1117",
+    "primary": "#6366f1",
+    "accent": "#ec4899",
+    "ink": "#c9d1d9"
+  },
+  "assets_needed": [
+    {"path": "assets/banner.light.png", "type": "readme_banner", "desc": "Wide banner on white background"},
+    {"path": "assets/banner.dark.png", "type": "readme_banner", "desc": "Wide banner on dark background"},
+    {"path": "assets/logo.light.png", "type": "square_logo", "desc": "Square logo on white background"},
+    {"path": "assets/logo.dark.png", "type": "square_logo", "desc": "Square logo on dark background"},
+    {"path": "assets/social-preview.png", "type": "github_social_preview", "desc": "GitHub social preview card"}
+  ]
+}
